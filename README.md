@@ -15,12 +15,13 @@ sections, so the ordering flow is unchanged — it just gains a front door.
 
 ## 🎬 The 3D landing page
 
-Real-time WebGL, no video and no generated assets — all geometry is built in code:
+A frame-scrub hero over real footage, plus real-time WebGL geometry built in code:
 
-- **Home** — procedural broast platter; camera sweeps from a top-down reveal into a
-  low hero angle as you scroll, with rising steam
+- **Home** — cinematic frame-scrub: real footage scrubbed frame-by-frame as you
+  scroll, forward then back
 - **Story** — editorial copy with count-up stats and an inline rotating 3D object
-- **Menu** — six signature plates with live prices, linking to the full order form
+- **Menu** — six signature plates with live prices, linking to the full order form,
+  with a procedural 3D broast platter alongside
 - **Explore** — cursor-driven golden particle field
 - **Order** — WhatsApp, order form and call-now actions
 
