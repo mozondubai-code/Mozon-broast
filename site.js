@@ -50,8 +50,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const pageFill = document.querySelector(".page-progress-fill");
 
   /* ---- Scroll-spy nav ---- */
-  const navLinks = [...document.querySelectorAll(".hud-nav-link")];
-  const navTargets = navLinks
+  // Only in-page hash links are scroll-spy targets. A nav can also carry ordinary
+  // links (e.g. "../index.html") — passing one of those to querySelector throws a
+  // SyntaxError and takes down everything below it in this handler.
+  const navTargets = [...document.querySelectorAll(".hud-nav-link")]
+    .filter((link) => (link.getAttribute("href") || "").startsWith("#"))
     .map((link) => ({ link, section: document.querySelector(link.getAttribute("href")) }))
     .filter((t) => t.section);
 
