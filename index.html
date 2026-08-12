@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mozon Broast — Al Nahda 2, Dubai</title>
+  <meta name="description" content="Mozon Broast — golden, crispy, pressure-fried broast in Al Nahda 2, Dubai. Free delivery within 5km. Open daily 12PM–2AM. Order on WhatsApp." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🍗</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Ambient ember field + cursor glow — atmosphere layer behind all content -->
+  <canvas id="embers" aria-hidden="true"></canvas>
+  <div class="cursor-glow" aria-hidden="true"></div>
+
+  <!-- Sitewide scroll progress -->
+  <div class="page-progress" aria-hidden="true"><div class="page-progress-fill"></div></div>
+
+  <nav class="hud">
+    <span class="hud-brand">MOZON<span class="dim">◆</span>BROAST</span>
+    <div class="hud-nav">
+      <a href="#hero" class="hud-nav-link">HOME</a>
+      <a href="#story" class="hud-nav-link">STORY</a>
+      <a href="#menu" class="hud-nav-link">MENU</a>
+      <a href="#experience" class="hud-nav-link">EXPLORE</a>
+      <a href="#order" class="hud-nav-link">ORDER</a>
+    </div>
+  </nav>
+
+  <!-- HOME — 3d-scene-effect, procedural broast platter driven by scroll -->
+  <section class="world" id="hero">
+    <div class="sticky">
+      <canvas></canvas>
+      <div class="vignette"></div>
+      <div class="overlay">
+        <!-- first line's window starts negative so it is already at full opacity
+             at progress 0 — otherwise the hero headline is invisible until the
+             visitor starts scrolling. -->
+        <h1 class="reveal-line" data-in="-0.30" data-out="0.32">MOZON BROAST</h1>
+        <h1 class="reveal-line" data-in="0.36" data-out="0.66">GOLDEN. CRISPY. FRESH.</h1>
+        <h1 class="reveal-line" data-in="0.70" data-out="1.30">OPEN DAILY 12PM – 2AM</h1>
+      </div>
+      <div class="hero-kicker">AL NAHDA 2 · DUBAI</div>
+      <div class="progress"><div class="progress-fill"></div></div>
+      <div class="scroll-hint">SCROLL ▾</div>
+    </div>
+  </section>
+
+  <!-- STORY — hybrid-2d3d editorial section -->
+  <section class="hybrid" id="story">
+    <div class="hybrid-grid">
+      <div class="hybrid-copy">
+        <h2 class="reveal">BROAST DONE THE RIGHT WAY</h2>
+        <p class="reveal">
+          At Mozon Broast in Al Nahda 2 — right by NMC Hospital — every piece is
+          pressure-fried to order: locked-in juices, a deep golden crust, and our
+          own garlic sauce on the side. From a quick 2-piece meal to a 20-piece
+          family feast, it leaves the fryer only when you order it.
+        </p>
+        <div class="stats">
+          <div class="stat"><span class="stat-num" data-count="14" data-suffix="H">0</span><span class="stat-label">OPEN DAILY</span></div>
+          <div class="stat"><span class="stat-num" data-count="5" data-suffix="KM">0</span><span class="stat-label">FREE DELIVERY</span></div>
+          <div class="stat"><span class="stat-num" data-count="40" data-suffix="+">0</span><span class="stat-label">MENU ITEMS</span></div>
+        </div>
+      </div>
+      <div class="hybrid-stage">
+        <canvas></canvas>
+      </div>
+    </div>
+  </section>
+
+  <!-- MENU — hybrid-2d3d editorial section with signature items -->
+  <section class="hybrid" id="menu">
+    <div class="hybrid-grid">
+      <div class="hybrid-stage">
+        <canvas></canvas>
+      </div>
+      <div class="hybrid-copy">
+        <h2 class="reveal">SIGNATURE PLATES</h2>
+        <div class="menu-list reveal">
+          <div class="menu-item">
+            <span><span class="menu-item-name">4 Pcs Broast</span><span class="menu-item-desc">Garlic, ketchup, fries, pitta</span></span>
+            <span class="menu-item-price">AED 24</span>
+          </div>
+          <div class="menu-item">
+            <span><span class="menu-item-name">Value Meal</span><span class="menu-item-desc">6 pcs + 4 strips + coleslaw + garlic + fries + drink</span></span>
+            <span class="menu-item-price">AED 68</span>
+          </div>
+          <div class="menu-item">
+            <span><span class="menu-item-name">20 Pcs Party Broast</span><span class="menu-item-desc">Coleslaw, garlic, ketchup, fries, pitta, drink</span></span>
+            <span class="menu-item-price">AED 115</span>
+          </div>
+          <div class="menu-item">
+            <span><span class="menu-item-name">Chicken Madhoot (Half)</span><span class="menu-item-desc">Pressure chicken rice</span></span>
+            <span class="menu-item-price">AED 30</span>
+          </div>
+          <div class="menu-item">
+            <span><span class="menu-item-name">Truffle Beef Burger</span><span class="menu-item-desc">Premium truffle beef</span></span>
+            <span class="menu-item-price">AED 21</span>
+          </div>
+          <div class="menu-item">
+            <span><span class="menu-item-name">Dynamite Chicken Wrap</span><span class="menu-item-desc">Spicy dynamite wrap</span></span>
+            <span class="menu-item-price">AED 12</span>
+          </div>
+        </div>
+        <div class="cta-row reveal" style="justify-content: flex-start;">
+          <a class="cta ghost" href="./index-1.html">FULL MENU &amp; ONLINE ORDER →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPLORE — pointer-follow-effect, cursor-driven golden particle field -->
+  <section class="parallax" id="experience">
+    <div class="sticky">
+      <canvas></canvas>
+      <div class="vignette"></div>
+      <div class="overlay">
+        <h1 class="reveal-line" data-in="-0.25" data-out="0.40">PRESSURE-FRIED TO ORDER</h1>
+        <h1 class="reveal-line" data-in="0.45" data-out="1.30">HOT OUT OF THE FRYER</h1>
+      </div>
+      <div class="parallax-hint">MOVE YOUR CURSOR</div>
+    </div>
+  </section>
+
+  <!-- ORDER — standard content section, no 3D -->
+  <section class="outro" id="order">
+    <h2 class="reveal">HUNGRY? ORDER NOW</h2>
+    <p class="reveal">
+      Free delivery within 5km of Al Nahda 2 · Open daily 12PM – 2AM
+    </p>
+    <div class="cta-row reveal">
+      <a class="cta primary" href="https://wa.me/971524877701?text=Hi%20Mozon%20Broast%2C%20I%27d%20like%20to%20order" target="_blank" rel="noopener">ORDER ON WHATSAPP</a>
+      <a class="cta gold" href="./index-1.html">CORPORATE ORDER FORM</a>
+      <a class="cta ghost" href="tel:+971524877701">CALL +971 52 487 7701</a>
+    </div>
+    <p class="reveal outro-meta">
+      Mozon Broast · Al Nahda 2, Near NMC Hospital, Dubai, UAE<br />
+      <a href="https://wa.me/971524877701" target="_blank" rel="noopener">WhatsApp +971 52 487 7701</a>
+    </p>
+  </section>
+
+  <!-- Lenis smooth scroll — shared driver across scroll-driven engines.
+       Vendored under vendor/ rather than CDN-loaded so the page has no
+       third-party runtime dependency and works offline / behind a proxy. -->
+  <script src="vendor/lenis-1.3.21.min.js"></script>
+
+  <!-- Three.js — needed for any WebGL section.
+       PIN RATIONALE: r160 is the LAST release that ships build/three.min.js — the UMD
+       build was removed in r161. Do not bump this version without also migrating every
+       engine to an ES module + import map. r160 logs a deprecation warning in console
+       on load; that warning is expected, not a bug. -->
+  <script src="vendor/three-0.160.0.min.js"></script>
+
+  <!-- Shared scroll/pointer utilities — MUST load before site.js and any engine script. -->
+  <script src="choreography.js"></script>
+
+  <!-- ===================== one entry per 3d-scene-effect section ===================== -->
+  <script>
+    window.WORLD_SECTIONS = [
+      {
+        section: "#hero",
+        motion: "platter",
+        palette: { accent: "#ffc107", bg: "#0c0605" },
+      },
+    ];
+  </script>
+
+  <!-- ===================== one entry per pointer-follow-effect section ===================== -->
+  <script>
+    window.PARALLAX_SECTIONS = [
+      {
+        section: "#experience",
+        motion: "abstract",
+        palette: { accent: "#ffc107", bg: "#140a06" },
+      },
+    ];
+  </script>
+
+  <!-- ===================== one entry per hybrid-2d3d section ===================== -->
+  <script>
+    window.HYBRID_SECTIONS = [
+      {
+        section: "#story",
+        motion: "abstract",
+        palette: { accent: "#ffc107", bg: "#140a06" },
+      },
+      {
+        section: "#menu",
+        motion: "reveal",
+        palette: { accent: "#e53935", bg: "#140a06" },
+      },
+    ];
+  </script>
+
+  <!-- site.js owns Lenis + reveals here (no video-scroll-effect in this build);
+       it must come before the engine scripts so window.__lenis exists when
+       their DOMContentLoaded handlers run. -->
+  <script src="site.js"></script>
+  <script src="3d-scene-effect.js"></script>
+  <script src="pointer-follow-effect.js"></script>
+  <script src="hybrid-2d3d.js"></script>
+</body>
+</html>
