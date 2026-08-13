@@ -10,7 +10,7 @@ linked from the Menu and Order sections.
 
 | Section (id) | Nav label | Planned technique | Built technique | Notes |
 |---|---|---|---|---|
-| `hero` | HOME | video-scroll-effect (frame scrub) | video-scroll-effect (frame scrub) | 59 frames of the supplied clip, scrubbed on scroll with `loopBack` (forward over the first half of the section, back over the second) |
+| `hero` | HOME | video-scroll-effect (frame scrub) | video-scroll-effect (frame scrub) | 53 frames of the supplied clip, scrubbed on scroll with `loopBack` (forward over the first half of the section, back over the second) |
 | `story` | STORY | hybrid-2d3d (`abstract`) | 5D 360&deg; photo showcase | Editorial copy + count-up stats; the abstract WebGL object is replaced by the real product photography on four animated depth planes (see below) |
 | `menu` | MENU | hybrid-2d3d (`platter`) | looping video stage | Six signature items with real AED prices from the order form; the stage plays the supplied footage as a short silent loop (the procedural platter it replaced is gone, and with it the last hybrid-2d3d section) |
 | `experience` | EXPLORE | pointer-follow-effect (`abstract`) | pointer-follow-effect (`abstract`) | Cursor-driven golden particle field; static centered pose on touch/reduced-motion, overlay copy still scroll-driven |
@@ -24,7 +24,7 @@ clip, and every other section is real-time WebGL.
 Source: a user-supplied 10.01s / 1280×720 / 24fps clip. Only part of it is usable on
 a restaurant site — it opens inside a mock 3D-software UI with garbled text, and ends
 on a sci-fi "5D hyper-asset" frame with more garbled text. The clean studio segment
-runs roughly 2.70s–5.15s.
+runs roughly 2.70s–4.90s.
 
 - **Window:** 2.70s → 4.90s → 53 frames at native 24fps. The blue "3D MODEL
   DOWNLOAD" wireframe fades in at ~4.95s, not ~5.2s as first assumed — an earlier
@@ -68,7 +68,7 @@ are removed from the page entirely.
 
 | Token | Value | Used for |
 |---|---|---|
-| `--accent` | `#e53935` | Broast red — brand mark, hero glow, menu-section 3D object |
+| `--accent` | `#e53935` | Broast red — brand mark, hero glow, badge pulse |
 | `--accent-2` / `--gold` | `#ffc107` | Brand gold — stats, prices, nav hover, 3D accents |
 | `--bg` | `#0c0605` | Warm near-black page background |
 | `--ink` | `#fdf6ee` | Warm off-white text |
@@ -119,9 +119,8 @@ deliberately dim so it never competes with content:
 - `choreography.js` — shared scroll/pointer/color utilities (unmodified scaffold)
 - `site.js` — Lenis driver, `.reveal`/`.stat-num` IntersectionObserver, overlay driver for pinned sections, plus the atmosphere layer above
 - `video-scroll-effect.js` — frame-scrub engine (patched, see below)
-- `pointer-follow-effect.js`, `hybrid-2d3d.js` — scaffold engines; `hybrid-2d3d.js`
-  carries an added `platter` geometry case
-- `frames/hero/` — 59 extracted JPEG frames
+- `pointer-follow-effect.js` — scaffold engine (cursor-driven showcase section)
+- `frames/hero/` — 53 extracted JPEG frames
 - `vendor/` — `three@0.160.0` and `lenis@1.3.21`, vendored from the npm registry so the page has no third-party runtime dependency
 
 ## Fixes made to the upstream scaffold
@@ -152,7 +151,7 @@ deliberately dim so it never competes with content:
 Driven in headless Chromium (Playwright) at 1440×900 and 390×844:
 
 - All engines initialize (1 scrub, 1 parallax, 2 hybrids), Lenis active, no page errors
-- All 59 frames return 200 and the preloader reaches 100%; canvas pixel signatures
+- All 53 frames return 200 and the preloader reaches 100%; canvas pixel signatures
   differ across four scroll positions, confirming the scrub actually advances rather
   than holding one frame
 - Scrolled through all five sections — copy, counters, progress bar and scroll-spy all track
